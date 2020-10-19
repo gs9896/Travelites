@@ -1,0 +1,150 @@
+{% load static %}
+{% static "img" as baseurl %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{user.username}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+  </head>
+  <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand"><span>Travelites</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">SignOut</a></li>
+			{% else %}
+		    <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">SignUp/SignIn</a></li>	
+		    {% endif %}
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'img/bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">Welcome, {{ user.username }}</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+   
+
+	<section class="ftco-subscribe" >
+      <div class="overlay">
+     </div>
+    </section>
+
+
+    <footer class="ftco-footer ftco-footer-2 ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Travelites</h2>
+              <p>“A mind that is stretched by a new experience can never go back to its old dimensions.”</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a class="py-2 d-block">Get yourself Registered as a Hotel and local Guide by contacting us and facing a general interview to showcase your experience in travelling industry and get benefitted most using our webapp.</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Experience</h2>
+              <ul class="list-unstyled">
+                  <li><a class="py-2 d-block">Adventure</a></li>
+                  <li><a class="py-2 d-block">Hotel and Restaurant</a></li>
+                  <li><a class="py-2 d-block">Best local Guides</a></li>
+                  <li><a class="py-2 d-block">Offers</a></li>
+                  <li><a class="py-2 d-block">Camping</a></li>
+                  <li><a class="py-2 d-block">Party</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Contact Us</h2>
+				  <div class="block-23 mb-3">
+					<ul>
+					  <li><span class="icon icon-map-marker"></span><span class="text">123, ABC, XYZ</span></li>
+					  <li><a><span class="icon icon-phone"></span><span class="text">+91-98969 xxxxx</span></a></li>
+					  <li><a><span class="icon icon-envelope"></span><span class="text">travelites@gmail.com</span></a></li>
+  				</ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'vendor/jquery/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/aos.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'vendor/jquery/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'vendor/jquery/main.js' %}"></script>
+
+  </body>
+</html>
